@@ -1,5 +1,7 @@
+import DashBoard from "./DashBoard";
+
 function App() {
-  return <div>ts-dashboard</div>;
+  return <DashBoard />;
 }
 
 export default App;

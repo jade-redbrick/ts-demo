@@ -1,0 +1,47 @@
+.dash_board {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background: linear-gradient(119.04deg, #eceff5 14.87%, #ebebf5 93.25%);
+  padding: 39px 56px;
+  box-sizing: border-box;
+
+  .board_title {
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 50px;
+    color: #000;
+  }
+
+  .lately_update {
+    position: absolute;
+    top: 39px;
+    right: 94px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: #8a8a8a;
+    text-align: right;
+  }
+
+  .board {
+    width: 100%;
+    max-width: 1613px;
+    margin: 74px auto 0;
+    display: flex;
+    align-items: stretch;
+  }
+
+  .flex_column {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    flex: 0 0 35%;
+    padding: 0 49px;
+    height: 100%;
+
+    &:first-child {
+      flex: 0 0 65%;
+    }
+  }
+}

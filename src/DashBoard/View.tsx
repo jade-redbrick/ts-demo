@@ -1,3 +1,4 @@
+import { ListEventGstarChallengeWorld } from "types";
 import styles from "./index.module.scss";
 import TotalSection from "./TotalSection";
 

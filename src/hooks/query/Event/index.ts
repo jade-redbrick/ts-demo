@@ -1,18 +1,20 @@
-import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-// import {
-//   getVar,
-//   listEventGstarChallengeWorld,
-//   setVar,
-//   updateEventGstarChallengeWorld,
-// } from "api";
+import { useQuery } from "@tanstack/react-query";
+import { listEventGstarChallengeWorld } from "api";
 import { queryKeys } from "utils";
 
-// export const useGetGstarList = () => {
-//   return useQuery(queryKeys.gstarWorldList, () => listEventGstarChallengeWorld().then((data) => data), {
-//     refetchIntervalInBackground: true,
-//     refetchInterval: 30000,
-//   });
-// };
+export const useGetGstarList = () => {
+  return useQuery(
+    queryKeys.gstarWorldList,
+    async () => {
+      const res = await listEventGstarChallengeWorld();
+      return res;
+    },
+    {
+      refetchIntervalInBackground: true,
+      refetchInterval: 30000,
+    }
+  );
+};
 
 // export const useUpdateGstarWorld = (id) => {
 //   const queryClient = useQueryClient();

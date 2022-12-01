@@ -9,8 +9,7 @@ export const contents = [
     id: "138dc5e2-56d3-461f-8476-9f9c3c1716ae",
   },
   {
-    thumbnail:
-      "https://wizschool-etc.s3.ap-northeast-2.amazonaws.com/challengers_thumb_maze.png",
+    thumbnail: "https://wizschool-etc.s3.ap-northeast-2.amazonaws.com/challengers_thumb_maze.png",
     chartTitle: ["Maze", "Castle"],
     title: "Maze Castle",
     creator: "LYL",
@@ -18,8 +17,7 @@ export const contents = [
     id: "13e655ea-f393-463b-8ec8-a849f0512747",
   },
   {
-    thumbnail:
-      "https://wizschool-etc.s3.ap-northeast-2.amazonaws.com/challengers_thumb_off.png",
+    thumbnail: "https://wizschool-etc.s3.ap-northeast-2.amazonaws.com/challengers_thumb_off.png",
     chartTitle: "오프렘닉",
     title: "오프렘닉",
     creator: "전자오락제작부",
@@ -54,8 +52,7 @@ export const contents = [
     id: "ef72cb17-5bb0-4b74-b002-8c7c4b45fb83",
   },
   {
-    thumbnail:
-      "https://wizschool-etc.s3.ap-northeast-2.amazonaws.com/challengers_thumb_jump.png",
+    thumbnail: "https://wizschool-etc.s3.ap-northeast-2.amazonaws.com/challengers_thumb_jump.png",
     chartTitle: "Jump",
     title: "Jump",
     creator: "정시우",
@@ -63,8 +60,7 @@ export const contents = [
     id: "317c3de7-41d5-43ae-83bf-8cf7da3e43c0",
   },
   {
-    thumbnail:
-      "https://wizschool-etc.s3.ap-northeast-2.amazonaws.com/challengers_thumb_zombie.png",
+    thumbnail: "https://wizschool-etc.s3.ap-northeast-2.amazonaws.com/challengers_thumb_zombie.png",
     chartTitle: "좀비처리반",
     title: "좀비처리반 (ZOMBIE SQAUD)",
     creator: "도원결의",
@@ -90,8 +86,7 @@ export const contents = [
     id: "6f1e7fe5-8b87-4aeb-9dcd-96cc7296bd2a",
   },
   {
-    thumbnail:
-      "https://wizschool-etc.s3.ap-northeast-2.amazonaws.com/challengers_thumb_police.png",
+    thumbnail: "https://wizschool-etc.s3.ap-northeast-2.amazonaws.com/challengers_thumb_police.png",
     chartTitle: "경찰과 도둑",
     title: "경찰과 도둑",
     creator: "Block",

@@ -46,6 +46,7 @@
     ]
   },
   "devDependencies": {
-    "@redbrick-sdk/service": "^2.0.0-rc221115052016"
+    "@redbrick-sdk/service": "^2.0.0-rc221115052016",
+    "prettier": "^2.8.0"
   }
 }

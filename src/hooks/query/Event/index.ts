@@ -12,7 +12,7 @@ export const useGetGstarList = () => {
     {
       refetchIntervalInBackground: true,
       refetchInterval: 30000,
-    }
+    },
   );
 };
 

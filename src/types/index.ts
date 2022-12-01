@@ -18,6 +18,15 @@ export interface GstarChallengeWorld {
   viewCount: number;
 }
 
+export interface SortedWorld {
+  authorName: string;
+  extraViewCount: number;
+  icon: string;
+  id: string;
+  name: string;
+  viewCount: number;
+}
+
 export interface GstarChallengeWorldListResponse {
   data: GstarChallengeWorld[];
 }

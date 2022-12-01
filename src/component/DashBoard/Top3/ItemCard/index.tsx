@@ -5,10 +5,11 @@ import ViewIcon from "assets/Images/Gstar/views_icon.svg";
 import RevenueIcon from "assets/Images/Gstar/revenue_icon.svg";
 import { contents } from "../../contents";
 import styles from "./index.module.scss";
+import { SortedWorld } from "types";
 
-function ItemCard({ ranking, cpv }: { ranking: number; cpv: number }) {
-  // const viewCount = item.extraViewCount + item.viewCount;
-  // const content = contents.find((content) => content.id === item.id);
+function ItemCard({ item, ranking, cpv }: { item: SortedWorld; ranking: number; cpv: number }) {
+  const viewCount = item.extraViewCount + item.viewCount;
+  const content = contents.find((content) => content.id === item.id);
   let medal = Rank1;
 
   switch (ranking) {
@@ -29,18 +30,18 @@ function ItemCard({ ranking, cpv }: { ranking: number; cpv: number }) {
     <div className={styles.item_wrap}>
       <div className={styles.item_card}>
         <img alt="rank icon" src={medal} className={styles.rank_img} />
-        {/* <img alt="thumbnail" src={content.thumbnail} />
-        <h3 className={styles.title}>{content.title}</h3>
-        <p className={styles.creator}>{content.creator}</p> */}
+        <img alt="thumbnail" src={content?.thumbnail} />
+        <h3 className={styles.title}>{content?.title}</h3>
+        <p className={styles.creator}>{content?.creator}</p>
 
         <div className={styles.info}>
           <div className={styles.views}>
             <img alt="view icon" src={ViewIcon} />
-            {/* {viewCount.toLocaleString()}회 */}
+            {viewCount.toLocaleString()}회
           </div>
           <div className={styles.revenue}>
             <img alt="revenue icon" src={RevenueIcon} />
-            {/* {(viewCount * cpv).toLocaleString()}원 */}
+            {(viewCount * cpv).toLocaleString()}원
           </div>
         </div>
       </div>

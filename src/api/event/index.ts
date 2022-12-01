@@ -1,5 +1,5 @@
 import RedbrickService from "@redbrick-sdk/service";
-import { ListEventGstarChallengeWorld } from "types";
+import { GstarChallengeWorld } from "types";
 
 const defaultClient_api = RedbrickService.ApiClient.instance;
 defaultClient_api.basePath = "https://dev-api.redbrick.land/v2";
@@ -14,10 +14,10 @@ const addTokenHeader = () => {
   };
 };
 
-export const listEventGstarChallengeWorld = () => {
+export const listEventGstarChallengeWorld = (): Promise<GstarChallengeWorld[]> => {
   addTokenHeader();
-  return new Promise((resolve, reject) => {
-    event_api.listEventGstarChallengeWorld((error: null, data: ListEventGstarChallengeWorld[]) => {
+  return new Promise<GstarChallengeWorld[]>((resolve, reject) => {
+    event_api.listEventGstarChallengeWorld((error: Error, data: GstarChallengeWorld[]) => {
       if (error) {
         reject(error);
         return;

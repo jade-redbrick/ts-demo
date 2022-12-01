@@ -5,5 +5,5 @@ export default function Container() {
   const { data: gstarWorlds, dataUpdatedAt } = useGetGstarList();
   console.log(gstarWorlds);
 
-  return <View />;
+  return <View gstarWorlds={gstarWorlds} />;
 }

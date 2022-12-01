@@ -1,7 +1,8 @@
+import { GstarChallengeWorld } from "types";
 import ItemCard from "./ItemCard";
 import styles from "./index.module.scss";
 
-function View({ cpv }: { cpv: number }) {
+function View({ gstarWorlds, cpv }: { gstarWorlds: GstarChallengeWorld[] | undefined; cpv: number }) {
   return (
     <div className={styles.top_list}>
       <ItemCard ranking={1} cpv={cpv} />

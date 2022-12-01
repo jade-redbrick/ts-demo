@@ -1,8 +1,9 @@
-import { ListEventGstarChallengeWorld } from "types";
-import styles from "./index.module.scss";
+import { GstarChallengeWorld } from "types";
+import Top3 from "./Top3";
 import TotalSection from "./TotalSection";
+import styles from "./index.module.scss";
 
-export default function View() {
+export default function View({ gstarWorlds }: { gstarWorlds: GstarChallengeWorld[] | undefined }) {
   return (
     <div className={styles.dash_board}>
       <h3 className={styles.board_title}>REDBRICK Advertisement Profit</h3>
@@ -15,7 +16,7 @@ export default function View() {
 
       <div className={styles.board}>
         <div className={styles.flex_column}>
-          {/* <Top3 gstarWorlds={gstarWorlds} cpv={cpv} /> */}
+          <Top3 gstarWorlds={gstarWorlds} />
           {/* <BarChart chartData={chartData} /> */}
         </div>
         <div className={styles.flex_column}>

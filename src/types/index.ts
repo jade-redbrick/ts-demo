@@ -1,19 +1,23 @@
-export interface ListEventGstarChallengeWorld {
-  id: string;
-  name: string;
-  ownerName: string;
+export interface GstarChallengeWorld {
+  authorCi: string;
   authorName: string;
-  url: string;
-  icon: string;
+  commentCount: number;
+  createdAt: string;
   description: string;
+  extraViewCount: number;
+  icon: string;
+  id: string;
+  isVisible: boolean;
   language: string;
   likeCount: number;
-  viewCount: number;
-  extraViewCount: number;
-  commentCount: number;
-  isVisible: boolean;
-  authorCi: string;
+  name: string;
   ownerCi: string;
-  createdAt: Date;
-  updatedAt: Date;
+  ownerName: string;
+  updatedAt: string;
+  url: string;
+  viewCount: number;
+}
+
+export interface GstarChallengeWorldListResponse {
+  data: GstarChallengeWorld[];
 }

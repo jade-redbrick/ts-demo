@@ -1,6 +1,7 @@
+import { GstarChallengeWorld } from "types";
 import View from "./View";
 
-export default function Container() {
+export default function Container({ gstarWorlds }: { gstarWorlds: GstarChallengeWorld[] | undefined }) {
   // const sortedWorlds = gstarWorlds?.map(function (world) {
   //   return {
   //     id: world.id,
@@ -16,5 +17,5 @@ export default function Container() {
   //   return b.viewCount + b.extraViewCount - (a.viewCount + a.extraViewCount);
   // });
 
-  return <View cpv={30} />;
+  return <View gstarWorlds={gstarWorlds} cpv={30} />;
 }

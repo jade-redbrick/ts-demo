@@ -3,9 +3,9 @@ import Rank2 from "assets/Images/Gstar/rank2.png";
 import Rank3 from "assets/Images/Gstar/rank3.png";
 import ViewIcon from "assets/Images/Gstar/views_icon.svg";
 import RevenueIcon from "assets/Images/Gstar/revenue_icon.svg";
+import { SortedWorld } from "types";
 import { contents } from "../../contents";
 import styles from "./index.module.scss";
-import { SortedWorld } from "types";
 
 function ItemCard({ item, ranking, cpv }: { item: SortedWorld; ranking: number; cpv: number }) {
   const viewCount = item.extraViewCount + item.viewCount;

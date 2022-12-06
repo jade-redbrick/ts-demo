@@ -30,3 +30,13 @@ export interface SortedWorld {
 export interface GstarChallengeWorldListResponse {
   data: GstarChallengeWorld[];
 }
+export interface ChartData {
+  labels: Array<string[] | string>;
+  datasets: ChartDatasets[];
+}
+
+export interface ChartDatasets {
+  data: number[] | undefined;
+  backgroundColor: string[];
+  borderWidth: number;
+}

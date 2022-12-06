@@ -1,7 +1,13 @@
 import { GstarChallengeWorld } from "types";
 import View from "./View";
 
-export default function Container({ gstarWorlds }: { gstarWorlds: GstarChallengeWorld[] | undefined }) {
+export default function Container({
+  gstarWorlds,
+  cpv,
+}: {
+  gstarWorlds: GstarChallengeWorld[] | undefined;
+  cpv: number;
+}) {
   const sortedWorlds = gstarWorlds?.map(function (world) {
     return {
       id: world.id,

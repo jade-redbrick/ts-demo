@@ -40,3 +40,8 @@ export interface ChartDatasets {
   backgroundColor: string[];
   borderWidth: number;
 }
+
+export interface VarInfo {
+  key: string;
+  value: string;
+}

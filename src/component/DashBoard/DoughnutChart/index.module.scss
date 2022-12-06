@@ -1,0 +1,25 @@
+.doughnut_chart {
+  margin: 53px 0 0;
+  border-radius: 15px;
+  background-color: #fff;
+  padding: 22px 22px 50px;
+  text-align: center;
+  height: 406px;
+  box-sizing: border-box;
+
+  .title {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    color: #474747;
+    margin: 0 0 34px;
+  }
+
+  .chart {
+    width: 100%;
+    max-width: 270px;
+    height: 100%;
+    max-height: 270px;
+    margin: auto;
+  }
+}

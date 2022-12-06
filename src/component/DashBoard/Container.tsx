@@ -1,20 +1,29 @@
 import { useEffect, useState } from "react";
-import { useGetGstarList } from "hooks";
+import { useGetGstarList, useGetVar } from "hooks";
 import { contents } from "./contents";
 import View from "./View";
 
 export default function Container() {
   const [gstarProfits, setGstarProfits] = useState<number[] | undefined>([]);
-  const { data: gstarWorlds, dataUpdatedAt } = useGetGstarList();
+  const { data: gstarWorlds } = useGetGstarList();
+  const { data: cpvData } = useGetVar("cpv");
 
   useEffect(() => {
-    // if (cpvData) {
-    const viewcount = gstarWorlds?.map(
-      (world) => (world?.viewCount + world?.extraViewCount) * Number(50),
-    );
-    setGstarProfits(viewcount);
-    // }
+    if (cpvData) {
+      const viewcount = gstarWorlds?.map(
+        (world) => (world?.viewCount + world?.extraViewCount) * Number(50),
+      );
+      setGstarProfits(viewcount);
+    }
   }, [gstarWorlds]);
+
+  let totalViewCount = 0;
+  if (gstarWorlds) {
+    totalViewCount = gstarWorlds.reduce(
+      (sum, world) => sum + world?.viewCount + world?.extraViewCount,
+      0,
+    );
+  }
 
   let labels: Array<string[] | string> = [];
   gstarWorlds?.filter((world) => {
@@ -49,5 +58,13 @@ export default function Container() {
     ],
   };
 
-  return <View gstarWorlds={gstarWorlds} chartData={chartData} />;
+  return (
+    <View
+      gstarWorlds={gstarWorlds}
+      chartData={chartData}
+      totalViewCount={totalViewCount}
+      totalRevenue={totalViewCount * Number(cpvData?.value)}
+      cpv={Number(cpvData?.value)}
+    />
+  );
 }

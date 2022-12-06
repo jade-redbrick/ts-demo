@@ -31,7 +31,7 @@ export const options = {
       scaleLabel: {
         display: true,
       },
-      ticks: {
+      tick: {
         display: true,
         stepSize: 2,
         color: "#2B2B2B",
@@ -61,9 +61,9 @@ export const options = {
     },
     datalabels: {
       color: "#A2A2A2",
-      anchor: "end",
+      anchor: "end" as const,
       clamp: false,
-      align: "top",
+      align: "top" as const,
       font: {
         weight: 500,
         size: 16,
@@ -74,6 +74,5 @@ export const options = {
 };
 
 export default function Chart({ chartData }: { chartData: ChartData }) {
-  return <></>;
-  // <Bar options={options} plugins={[ChartDataLabels]} data={chartData} />;
+  return <Bar options={options} plugins={[ChartDataLabels]} data={chartData} />;
 }

@@ -3,7 +3,7 @@ import {
   useGetGstarList,
   useGetVar,
   // useSetCpv,
-} from "hooks";
+} from "querys";
 import View from "./View";
 
 export default function Container() {

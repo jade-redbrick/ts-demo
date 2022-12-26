@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { getWorldList } from "api";
-import { queryKeys } from "utils";
+import { queryKeys } from "querys";
 
 export const useChallengeList = () => {
   return useQuery(queryKeys.challengeList, async () => {

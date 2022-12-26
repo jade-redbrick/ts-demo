@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { getVar, listEventGstarChallengeWorld } from "api";
 import { VarInfo } from "types";
-import { queryKeys } from "utils";
+import { queryKeys } from "querys";
 
 export const useGetGstarList = () => {
   return useQuery(

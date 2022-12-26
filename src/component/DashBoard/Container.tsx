@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useGetGstarList, useGetVar } from "hooks";
+import { useGetGstarList, useGetVar } from "querys";
 import { contents } from "./contents";
 import View from "./View";
 

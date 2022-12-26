@@ -1,6 +1,8 @@
+import { challengeKeys } from "./challenge";
 import { eventKeys } from "./event";
 
 export const queryKeys = {
+  ...challengeKeys,
   ...eventKeys,
 };
 

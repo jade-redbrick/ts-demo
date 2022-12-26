@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from "react";
 import {
-  // usePopup,
   useGetGstarList,
   useGetVar,
   // useSetCpv,
-  // useChallengeList,
 } from "hooks";
 import View from "./View";
 
 export default function Container() {
-  // const {openPopup} = usePopup();
   const { data: cpvData } = useGetVar("cpv");
-  // const { data: challenge } = useChallengeList();
   const [cpv, setCpv] = useState(0);
   const [clickedSave, setClickedSave] = useState(false);
 
@@ -27,14 +23,14 @@ export default function Container() {
   };
 
   const { data: gstarWorlds } = useGetGstarList();
-
-  const viewCountSum = gstarWorlds?.reduce((sum, value) => sum + value.viewCount, 0);
-  const addViewCountSum = gstarWorlds?.reduce((sum, value) => sum + value.extraViewCount, 0);
-  // const exposureViewCountSum = viewCountSum + addViewCountSum;
-  // const profitsSum = exposureViewCountSum * cpv;
-
-  // const voteCountSum = challenge?.reduce((sum, value) => sum + value.voteCount, 0);
-  // const extraVoteCountSum = challenge?.reduce((sum, value) => sum + value.extraVoteCount, 0);
+  let viewCountSum = 0;
+  let addViewCountSum = 0;
+  if (gstarWorlds) {
+    viewCountSum = gstarWorlds.reduce((sum, value) => sum + value.viewCount, 0);
+    addViewCountSum = gstarWorlds.reduce((sum, value) => sum + value.extraViewCount, 0);
+  }
+  const exposureViewCountSum = viewCountSum + addViewCountSum;
+  const profitsSum = exposureViewCountSum * cpv;
 
   // const cpvMutation = useSetCpv();
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
@@ -60,18 +56,15 @@ export default function Container() {
 
   return (
     <View
-    // gstarWorlds={gstarWorlds}
-    // challenge={challenge}
-    // voteCountSum={voteCountSum}
-    // extraVoteCountSum={extraVoteCountSum}
-    // cpv={cpv}
-    // handleCpv={handleCpv}
-    // submitHandler={submitHandler}
-    // viewCountSum={viewCountSum}
-    // addViewCountSum={addViewCountSum}
-    // exposureViewCountSum={exposureViewCountSum}
-    // profitsSum={profitsSum}
-    // clickedSave={clickedSave}
+      gstarWorlds={gstarWorlds}
+      cpv={cpv}
+      handleCpv={handleCpv}
+      submitHandler={submitHandler}
+      viewCountSum={viewCountSum}
+      addViewCountSum={addViewCountSum}
+      exposureViewCountSum={exposureViewCountSum}
+      profitsSum={profitsSum}
+      clickedSave={clickedSave}
     />
   );
 }

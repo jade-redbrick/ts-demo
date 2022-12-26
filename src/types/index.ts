@@ -45,3 +45,25 @@ export interface VarInfo {
   key: string;
   value: string;
 }
+
+export type World = {
+  ownerIcon: string;
+  icon: string;
+  description: string;
+  language: string;
+  likeCount: number;
+  isVisible: boolean;
+  url: string;
+  commentCount: number;
+  tags: string;
+  createdAt: string;
+  ownerName: string;
+  authorName: string;
+  name: string;
+  authorIcon: string;
+  id: string;
+  viewCount: number;
+  authorCi: string;
+  ownerCi: string;
+  updatedAt: string;
+};

@@ -30,12 +30,12 @@ export const useGetVar = (key: string) => {
   return useQuery(queryKeys.var(key), () => getVar(key).then((data) => data));
 };
 
-// export const useSetCpv = () => {
-//   const key = "cpv";
-//   const queryClient = useQueryClient();
-//   return useMutation((value) => setVar(key, { value: String(value) }), {
-//     onSuccess: () => {
-//       queryClient.invalidateQueries(queryKeys.var(key));
-//     },
-//   });
-// };
+export const useSetCpv = () => {
+  const key: string = "cpv";
+  const queryClient = useQueryClient();
+  return useMutation((value) => setVar(key, { value: String(value) }), {
+    onSuccess: () => {
+      queryClient.invalidateQueries(queryKeys.var(key));
+    },
+  });
+};

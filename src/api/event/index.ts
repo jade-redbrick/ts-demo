@@ -52,7 +52,7 @@ export const listEventGstarChallengeWorld = (): Promise<GstarChallengeWorld[]> =
 export const getVar = (key: string): Promise<VarInfo> => {
   addTokenHeader();
   return new Promise((resolve, reject) => {
-    var_api.getVar(key, (error: Error, data: VarInfo, response: Response) => {
+    var_api.getVar(key, (error: Error, data: VarInfo) => {
       if (error) {
         reject(error);
         return;
@@ -63,24 +63,26 @@ export const getVar = (key: string): Promise<VarInfo> => {
   });
 };
 
-// export const setVar = (key, options) => {
-//   const opts = {
-//     body: {
-//       ...options,
-//     },
-//   };
-//   addTokenHeader();
-//   return new Promise((resolve, reject) => {
-//     var_api.setVar(key, opts, (error, data, response) => {
-//       if (error) {
-//         reject(error);
-//         return;
-//       } else {
-//         const object = response.body;
-//         resolve(object);
-//       }
-//     });
-//   });
-// };
+export const setVar = (key: string, options: { value: string }) => {
+  const opts = {
+    body: {
+      ...options,
+    },
+  };
+  addTokenHeader();
+  return new Promise((resolve, reject) => {
+    var_api.setVar(
+      key,
+      opts,
+      (error: Error, data: { code: number | undefined; message: string | undefined }) => {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(data);
+        }
+      },
+    );
+  });
+};
 
 export {};

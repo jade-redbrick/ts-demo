@@ -1,4 +1,4 @@
-// import {  useUpdateGstarWorld } from "hooks";
+import { useUpdateGstarWorld } from "querys";
 import { useEffect, useState } from "react";
 import { GstarChallengeWorld } from "types";
 import View from "./View";
@@ -19,7 +19,7 @@ export default function Container({
   const profits = showViewCount * cpv;
   const profitsRate = (profits / profitsSum) * 100;
 
-  // const worldMutation = useUpdateGstarWorld(item.id);
+  const worldMutation = useUpdateGstarWorld(item.id);
 
   const onClickLink = () => {
     window.open(`https://dev.redbrick.land/studio/?mode=play&pid=${item.id}`);
@@ -27,12 +27,8 @@ export default function Container({
 
   useEffect(() => {
     if (clickedSave && addViewCount !== item.extraViewCount) {
-      console.log("extraViewCount");
-      // worldMutation.mutateAsync({ extraViewCount: addViewCount });
+      worldMutation.mutateAsync({ extraViewCount: addViewCount });
     }
-    // if (clickedSave && voteCount !== challengeItem.extraVoteCount) {
-    //   voteCountMutation.mutateAsync(voteCount);
-    // }
   }, [clickedSave]);
 
   return (

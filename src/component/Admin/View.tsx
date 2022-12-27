@@ -1,4 +1,3 @@
-// import { BasicButton } from "components/Button";
 import TableItem from "./TableItem";
 import styles from "./index.module.scss";
 import { GstarChallengeWorld } from "types";

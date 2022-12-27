@@ -1,9 +1,6 @@
 import React, { useEffect, useState } from "react";
-import {
-  useGetGstarList,
-  useGetVar,
-  // useSetCpv,
-} from "querys";
+import { Modal } from "antd";
+import { useGetGstarList, useGetVar, useSetCpv } from "querys";
 import View from "./View";
 
 export default function Container() {
@@ -32,26 +29,19 @@ export default function Container() {
   const exposureViewCountSum = viewCountSum + addViewCountSum;
   const profitsSum = exposureViewCountSum * cpv;
 
-  // const cpvMutation = useSetCpv();
+  const cpvMutation = useSetCpv();
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setClickedSave(true);
 
-    // if (cpv !== cpvData?.value) {
-    //   cpvMutation.mutateAsync(cpv);
-    // }
+    if (cpv !== Number(cpvData?.value)) {
+      cpvMutation.mutateAsync(cpv);
+    }
 
-    // openPopup({
-    //   type: "oneButton",
-    //   props: {
-    //     title: "저장되었습니다",
-    //     confirmAction: () => setClickedSave(false),
-    //   },
-    //   options: {
-    //     dismissOverlay: true,
-    //     closeButton: false,
-    //   },
-    // });
+    Modal.info({
+      title: "저장되었습니다",
+      onOk: () => setClickedSave(false),
+    });
   };
 
   return (

@@ -28,25 +28,34 @@ export const listEventGstarChallengeWorld = (): Promise<GstarChallengeWorld[]> =
   });
 };
 
-// export const updateEventGstarChallengeWorld = (id, options) => {
-//   const opts = {
-//     body: {
-//       ...options,
-//     },
-//   };
-//   addTokenHeader();
-//   return new Promise((resolve, reject) => {
-//     event_api.updateEventGstarChallengeWorld(id, opts, (error, data, response) => {
-//       if (error) {
-//         reject(error);
-//         return;
-//       } else {
-//         const object = response.body;
-//         resolve(object);
-//       }
-//     });
-//   });
-// };
+export const updateEventGstarChallengeWorld = (id: string, options: { extraViewCount: number }) => {
+  const opts = {
+    body: {
+      ...options,
+    },
+  };
+  addTokenHeader();
+  return new Promise((resolve, reject) => {
+    event_api.updateEventGstarChallengeWorld(
+      id,
+      opts,
+      (
+        error: Error,
+        data: {
+          code: number;
+          message: string;
+        },
+      ) => {
+        if (error) {
+          reject(error);
+          return;
+        } else {
+          resolve(data);
+        }
+      },
+    );
+  });
+};
 
 /** var api */
 export const getVar = (key: string): Promise<VarInfo> => {

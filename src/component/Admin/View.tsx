@@ -1,6 +1,7 @@
 import TableItem from "./TableItem";
 import styles from "./index.module.scss";
 import { GstarChallengeWorld } from "types";
+import { Button, Input } from "antd";
 
 export default function View({
   gstarWorlds,
@@ -67,9 +68,9 @@ export default function View({
       <div className={styles.options}>
         <div className={styles.cpv}>
           <p>CPV 단가</p>
-          <input value={cpv} onChange={handleCpv} type="number" />
+          <Input value={cpv} onChange={handleCpv} type="number" />
         </div>
-        <button>저장</button>
+        <Button htmlType="submit">저장</Button>
       </div>
     </form>
   );

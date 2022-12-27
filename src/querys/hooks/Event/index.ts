@@ -1,6 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { getVar, listEventGstarChallengeWorld, setVar, updateEventGstarChallengeWorld } from "api";
-import { VarInfo } from "types";
 import { queryKeys } from "querys";
 
 export const useGetGstarList = () => {

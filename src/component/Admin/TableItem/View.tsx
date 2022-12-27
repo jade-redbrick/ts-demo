@@ -1,3 +1,4 @@
+import { Input } from "antd";
 import { GstarChallengeWorld } from "types";
 import { contents } from "../../contents";
 import styles from "./index.module.scss";
@@ -33,7 +34,7 @@ export default function View({
       <td>{content?.creator}</td>
       <td>{item?.viewCount?.toLocaleString()}</td>
       <td>
-        <input
+        <Input
           value={addViewCount}
           onChange={(e) => setAddViewCount(Number(e.target.value))}
           maxLength={7}
